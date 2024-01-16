@@ -6,6 +6,7 @@
         <ul class="text-xs text-gray-200 flex">
             <x-nav-link link="/about">About</x-nav-link>
             <x-nav-link link="/projects">Projects</x-nav-link>
+            <x-nav-link link="/contact">Contact</x-nav-link>
         </ul>
     </nav>
 </div>
