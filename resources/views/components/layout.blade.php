@@ -7,7 +7,12 @@
     @vite('resources/css/app.css')
 </head>
 <body>
-    <x-header />
-    {{ $slot }}
+    <div class="flex flex-col overflow-hidden">
+        <x-header />
+        <main class="h-screen overflow-y-scroll flex-grow">
+            {{ $slot }}
+        </main>
+        <x-footer />
+    </div>
 </body>
 </html>
