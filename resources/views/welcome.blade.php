@@ -17,6 +17,7 @@
         <div class="w-1/3 border border-black rounded-full ml-4">
         </div>
     </div>
+    <x-sub-heading>Skills</x-sub-heading>
     <x-sub-heading>Education</x-sub-heading>
     {{-- <x-grid /> --}}
     <x-sub-heading>Featured Projects</x-sub-heading>
