@@ -28,7 +28,7 @@ class Login extends Component
         }
 
         session()->regenerate();
-        return redirect('/');
+        return redirect('/admin');
     }
 
     public function render()

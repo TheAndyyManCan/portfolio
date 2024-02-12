@@ -3,7 +3,7 @@
         Excellence, Integrity, Occasional Lateness
     </div>
     <div class="flex mx-32 py-6">
-        <div class="w-2/3 p-2">
+        <div class="w-2/3 p-2 mx-auto">
             <p>
                 My name is Andy McDonald. I am a software engineer with a particular interest in back end web development using frameworks such as Laravel. I have recently completed my third year at the University of the Highlands and Islands, achieving a BSc in Computing (Software Engineering) with a distinction, and I am currently in 4th year on course to achieve my honours.
             </p><br />
@@ -14,11 +14,8 @@
                 I can't tell you how much I appreciate you taking the time to view my portfolio. Feel free to look around and find out more about me and my passion.
             </p>
         </div>
-        <div class="w-1/3 border border-black rounded-full ml-4">
-        </div>
     </div>
-    <x-sub-heading>Skills</x-sub-heading>
+    <livewire:sub-heading text="Skills" type="skills" />
     <x-sub-heading>Education</x-sub-heading>
-    {{-- <x-grid /> --}}
     <x-sub-heading>Featured Projects</x-sub-heading>
 </x-layout>
