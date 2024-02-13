@@ -1,8 +1,10 @@
 <?php
 
 use App\Http\Controllers\EducationController;
+use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\SkillController;
 use App\Models\Education;
+use App\Models\Project;
 use Illuminate\Support\Facades\Route;
 use App\Models\Skill;
 
@@ -19,8 +21,9 @@ use App\Models\Skill;
 
 Route::get('/', function () {
     return view('welcome', [
-        'skills' => Skill::all(),
-        'education' => Education::all()
+        'skills' => Skill::all()->sortByDesc('years_of_experience'),
+        'education' => Education::all(),
+        'projects' => Project::all()->where('featured', 1)
     ]);
 });
 
@@ -47,6 +50,10 @@ Route::get('/admin/skills/{skill}/edit', [SkillController::class, 'edit'])->midd
 Route::get('/admin/education', [EducationController::class, 'index'])->middleware('auth');
 Route::get('/admin/education/create', [EducationController::class, 'create'])->middleware('auth');
 Route::get('/admin/education/{education}/edit', [EducationController::class, 'edit'])->middleware('auth');
+
+Route::get('/admin/project', [ProjectController::class, 'index'])->middleware('auth');
+Route::get('/admin/project/create', [ProjectController::class, 'create'])->middleware('auth');
+Route::get('/admin/project/{project}/edit', [ProjectController::class, 'edit'])->middleware('auth');
 
 Route::get('/login', function(){
     return view('sessions.login');

@@ -4,6 +4,6 @@
     <div class="text-sm uppercase text-center p-2">{{ $item->title }}</div>
     <div class="text-sm uppercase text-center p-2">{{ $item->start_year }} - {{ $item->end_year }}</div>
     @if($showDescription)
-    <div wire:transition.duration.300ms class="border-black bg-gray-300 text-center rounded-xl p-6 mx-2">{{ $item->description }}</div>
+        <div wire:transition.duration.300ms class="border-black bg-gray-300 text-center rounded-xl p-6 mx-2">{{ $item->description }}</div>
     @endif
 </div>

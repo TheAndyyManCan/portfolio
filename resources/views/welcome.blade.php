@@ -18,6 +18,7 @@
     <x-sub-heading>Skills</x-sub-heading>
     <x-content-grid :content="$skills" type="skill" />
     <x-sub-heading>Education</x-sub-heading>
-    <x-content-grid :content="$education" type="education" />
+    <x-content-grid :content="$education" type="education" class="!grid-cols-2 lg:mx-64" />
     <x-sub-heading>Featured Projects</x-sub-heading>
+    <x-content-grid :content="$projects" type="project" class="!grid-cols-3 lg:mx-48" />
 </x-layout>
