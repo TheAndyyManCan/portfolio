@@ -1,8 +1,8 @@
-<div class="max-w-full bg-black flex">
-    <div class="p-6 transition ease-in-out hover:-translate-y-1 hover:scale-105 duration-300">
+<div class="max-w-full bg-black flex flex-col lg:flex-row">
+    <div class="p-6 transition ease-in-out hover:-translate-y-1 hover:scale-105 duration-300 mx-auto lg:mx-0">
         <a href="/" class="text-white uppercase font-bold text-4xl" wire:navigate >Andy McDonald</a>
     </div>
-    <nav class="flex p-8 my-auto right-0 absolute">
+    <nav class="flex p-8 my-auto lg:right-0 lg:absolute mx-auto">
         <ul class="text-xs text-gray-200 flex">
             <x-nav-link link="/about">About</x-nav-link>
             <x-nav-link link="/projects">Projects</x-nav-link>

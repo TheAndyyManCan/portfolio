@@ -2,8 +2,8 @@
     <div class="mx-32 py-6 text-5xl uppercase font-extrabold text-center">
         Excellence, Integrity, Occasional Lateness
     </div>
-    <div class="flex mx-32 py-6">
-        <div class="w-2/3 p-2 mx-auto">
+    <div class="flex md:mx-32 mx-8 py-6">
+        <div class="md:w-2/3 w-full p-2 mx-auto">
             <p>
                 My name is Andy McDonald. I am a software engineer with a particular interest in back end web development using frameworks such as Laravel. I have recently completed my third year at the University of the Highlands and Islands, achieving a BSc in Computing (Software Engineering) with a distinction, and I am currently in 4th year on course to achieve my honours.
             </p><br />
@@ -15,7 +15,9 @@
             </p>
         </div>
     </div>
-    <livewire:sub-heading text="Skills" type="skills" />
+    <x-sub-heading>Skills</x-sub-heading>
+    <x-content-grid :content="$skills" type="skill" />
     <x-sub-heading>Education</x-sub-heading>
+    <x-content-grid :content="$education" type="education" />
     <x-sub-heading>Featured Projects</x-sub-heading>
 </x-layout>

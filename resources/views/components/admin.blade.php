@@ -11,7 +11,7 @@
                 <ul>
                     <x-admin-link link="/admin" text="Dashboard" />
                     <x-admin-link link="/admin/skills" text="Manage Skills" />
-                    <x-admin-link link="#" text="Manage Education" />
+                    <x-admin-link link="/admin/education" text="Manage Education" />
                     <x-admin-link link="#" text="Manage Projects" />
                 </ul>
             </aside>

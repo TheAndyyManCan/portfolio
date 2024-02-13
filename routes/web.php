@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\EducationController;
 use App\Http\Controllers\SkillController;
+use App\Models\Education;
 use Illuminate\Support\Facades\Route;
 use App\Models\Skill;
 
@@ -17,7 +19,8 @@ use App\Models\Skill;
 
 Route::get('/', function () {
     return view('welcome', [
-        'skills' => Skill::all()
+        'skills' => Skill::all(),
+        'education' => Education::all()
     ]);
 });
 
@@ -40,6 +43,10 @@ Route::get('/admin', function(){
 Route::get('/admin/skills', [SkillController::class, 'index'])->middleware('auth');
 Route::get('/admin/skills/create', [SkillController::class, 'create'])->middleware('auth');
 Route::get('/admin/skills/{skill}/edit', [SkillController::class, 'edit'])->middleware('auth');
+
+Route::get('/admin/education', [EducationController::class, 'index'])->middleware('auth');
+Route::get('/admin/education/create', [EducationController::class, 'create'])->middleware('auth');
+Route::get('/admin/education/{education}/edit', [EducationController::class, 'edit'])->middleware('auth');
 
 Route::get('/login', function(){
     return view('sessions.login');

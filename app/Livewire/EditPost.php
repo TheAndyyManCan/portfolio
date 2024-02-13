@@ -31,6 +31,7 @@ class EditPost extends Component
     }
 
     public function edit(){
+        $this->validate();
         $attributes = [
             'title' => $this->title,
             'icon_url' => $this->icon_url,

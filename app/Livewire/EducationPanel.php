@@ -3,16 +3,16 @@
 namespace App\Livewire;
 
 use App\Models\Education;
-use App\Models\Skill;
 use Livewire\Component;
 
-class SkillPanel extends Component
+class EducationPanel extends Component
 {
+
     public $item;
     public $showDescription = false;
 
     public function mount($id){
-        $this->item = Skill::find($id);
+        $this->item = Education::find($id);
     }
 
     public function toggleDescription(){
@@ -21,6 +21,6 @@ class SkillPanel extends Component
 
     public function render()
     {
-        return view('livewire.skill-panel');
+        return view('livewire.education-panel');
     }
 }
