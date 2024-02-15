@@ -1,6 +1,10 @@
 <?php
 
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\EducationController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\SkillController;
 use App\Models\Education;
@@ -19,17 +23,9 @@ use App\Models\Skill;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome', [
-        'skills' => Skill::all()->sortByDesc('years_of_experience'),
-        'education' => Education::all(),
-        'projects' => Project::all()->where('featured', 1)
-    ]);
-});
+Route::get('/', [HomeController::class, 'index']);
 
-Route::get('/about', function () {
-    return view('about');
-});
+Route::get('/about', [AboutController::class, 'index']);
 
 Route::get('/projects', function() {
     return view('projects');
@@ -54,6 +50,14 @@ Route::get('/admin/education/{education}/edit', [EducationController::class, 'ed
 Route::get('/admin/project', [ProjectController::class, 'index'])->middleware('auth');
 Route::get('/admin/project/create', [ProjectController::class, 'create'])->middleware('auth');
 Route::get('/admin/project/{project}/edit', [ProjectController::class, 'edit'])->middleware('auth');
+
+Route::get('/admin/post', [PostController::class, 'index'])->middleware('auth');
+Route::get('/admin/post/create', [PostController::class, 'create'])->middleware('auth');
+Route::get('/admin/post/{post}/edit', [PostController::class, 'edit'])->middleware('auth');
+
+Route::get('/admin/category', [CategoryController::class, 'index'])->middleware('auth');
+Route::get('/admin/category/create', [CategoryController::class, 'create'])->middleware('auth');
+Route::get('/admin/category/{category}/edit', [CategoryController::class, 'edit'])->middleware('auth');
 
 Route::get('/login', function(){
     return view('sessions.login');

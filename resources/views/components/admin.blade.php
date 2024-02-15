@@ -13,6 +13,8 @@
                     <x-admin-link link="/admin/skills" text="Manage Skills" />
                     <x-admin-link link="/admin/education" text="Manage Education" />
                     <x-admin-link link="/admin/project" text="Manage Projects" />
+                    <x-admin-link link="/admin/category" text="Manage Categories" />
+                    <x-admin-link link="/admin/post" text="Manage Posts" />
                 </ul>
             </aside>
         </x-panel>
