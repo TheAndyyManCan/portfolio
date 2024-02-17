@@ -4,7 +4,7 @@
     @if($showDescription)
         <div wire:transition.duration.300ms class="border-black bg-gray-300 text-center rounded-xl p-6 mx-2">
             {{ $item->description }}<br />
-            <a href="#" class="text-blue-700 font-semibold">Find out more</a>
+            <a href="/projects/{{ $item->id }}" class="text-blue-700 font-semibold">Find out more</a>
         </div>
     @endif
 </div>

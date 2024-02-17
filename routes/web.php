@@ -4,8 +4,11 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\EducationController;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\PostController;
+use App\Http\Controllers\AdminPostController;
+use App\Http\Controllers\ContactMessageController;
+use App\Http\Controllers\AdminProjectController;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\SessionController;
 use App\Http\Controllers\SkillController;
 use App\Models\Education;
 use App\Models\Project;
@@ -27,13 +30,12 @@ Route::get('/', [HomeController::class, 'index']);
 
 Route::get('/about', [AboutController::class, 'index']);
 
-Route::get('/projects', function() {
-    return view('projects');
-});
+Route::get('/projects', [ProjectController::class, 'index']);
+Route::get('/projects/{project}', [ProjectController::class, 'view']);
 
-Route::get('/contact', function() {
-    return view('contact');
-});
+Route::get('/contact', [ContactMessageController::class, 'create']);
+Route::get('/admin/message', [ContactMessageController::class, 'index'])->middleware('auth');
+Route::get('/admin/message/{contactmessage}/view', [ContactMessageController::class, 'view'])->middleware('auth');
 
 Route::get('/admin', function(){
     return view('admin.admin');
@@ -47,18 +49,17 @@ Route::get('/admin/education', [EducationController::class, 'index'])->middlewar
 Route::get('/admin/education/create', [EducationController::class, 'create'])->middleware('auth');
 Route::get('/admin/education/{education}/edit', [EducationController::class, 'edit'])->middleware('auth');
 
-Route::get('/admin/project', [ProjectController::class, 'index'])->middleware('auth');
-Route::get('/admin/project/create', [ProjectController::class, 'create'])->middleware('auth');
-Route::get('/admin/project/{project}/edit', [ProjectController::class, 'edit'])->middleware('auth');
+Route::get('/admin/project', [AdminProjectController::class, 'index'])->middleware('auth');
+Route::get('/admin/project/create', [AdminProjectController::class, 'create'])->middleware('auth');
+Route::get('/admin/project/{project}/edit', [AdminProjectController::class, 'edit'])->middleware('auth');
 
-Route::get('/admin/post', [PostController::class, 'index'])->middleware('auth');
-Route::get('/admin/post/create', [PostController::class, 'create'])->middleware('auth');
-Route::get('/admin/post/{post}/edit', [PostController::class, 'edit'])->middleware('auth');
+Route::get('/admin/post', [AdminPostController::class, 'index'])->middleware('auth');
+Route::get('/admin/post/create', [AdminPostController::class, 'create'])->middleware('auth');
+Route::get('/admin/post/{post}/edit', [AdminPostController::class, 'edit'])->middleware('auth');
 
 Route::get('/admin/category', [CategoryController::class, 'index'])->middleware('auth');
 Route::get('/admin/category/create', [CategoryController::class, 'create'])->middleware('auth');
 Route::get('/admin/category/{category}/edit', [CategoryController::class, 'edit'])->middleware('auth');
 
-Route::get('/login', function(){
-    return view('sessions.login');
-})->name('login');
+Route::get('/login', [SessionController::class, 'index'])->name('login');
+Route::post('/logout', [SessionController::class, 'destroy'])->name('logout')->middleware('auth');

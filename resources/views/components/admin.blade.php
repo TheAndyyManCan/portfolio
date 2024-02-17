@@ -15,6 +15,7 @@
                     <x-admin-link link="/admin/project" text="Manage Projects" />
                     <x-admin-link link="/admin/category" text="Manage Categories" />
                     <x-admin-link link="/admin/post" text="Manage Posts" />
+                    <x-admin-link link="/admin/message" text="Messages" />
                 </ul>
             </aside>
         </x-panel>

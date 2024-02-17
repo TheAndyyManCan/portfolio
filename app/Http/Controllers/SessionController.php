@@ -24,6 +24,10 @@ class SessionController extends Controller
         return redirect('/admin');
     }
 
+    public function index(){
+        return view('sessions.login');
+    }
+
     public function destroy()
     {
         auth()->logout();
