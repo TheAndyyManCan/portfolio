@@ -6,11 +6,11 @@
         @endforeach
     @elseif($type == 'education')
         @foreach($content as $item)
-            <livewire:education-panel :id="$item->id" />
+            <livewire:education-panel :id="$item->id" lazy />
         @endforeach
     @elseif($type == 'project')
         @foreach($content as $item)
-            <livewire:project-panel :id="$item->id" />
+            <livewire:project-panel :id="$item->id" lazy />
         @endforeach
     @endif
 </div>

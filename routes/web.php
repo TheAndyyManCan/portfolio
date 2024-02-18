@@ -7,6 +7,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminPostController;
 use App\Http\Controllers\ContactMessageController;
 use App\Http\Controllers\AdminProjectController;
+use App\Http\Controllers\FileUploadController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\SkillController;
@@ -60,6 +61,9 @@ Route::get('/admin/post/{post}/edit', [AdminPostController::class, 'edit'])->mid
 Route::get('/admin/category', [CategoryController::class, 'index'])->middleware('auth');
 Route::get('/admin/category/create', [CategoryController::class, 'create'])->middleware('auth');
 Route::get('/admin/category/{category}/edit', [CategoryController::class, 'edit'])->middleware('auth');
+
+Route::get('/admin/files', [FileUploadController::class, 'index'])->middleware('auth');
+Route::post('/admin/files/{fileupload}/delete', [FileUploadController::class, 'delete'])->middleware('auth');
 
 Route::get('/login', [SessionController::class, 'index'])->name('login');
 Route::post('/logout', [SessionController::class, 'destroy'])->name('logout')->middleware('auth');

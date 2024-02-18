@@ -5,6 +5,10 @@
         <x-form-input name="title" />
         <x-form-input name="description" />
         <x-form-input name="content" type="textarea" />
+        <x-file-input label="Upload Photo(s)" model="photos" />
+        @error('file')
+            <span>{{ $message }}</span>
+        @enderror
         <x-submit-button class="ml-4 mt-2">Submit</x-submit-button>
     </form>
 </div>

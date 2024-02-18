@@ -1,9 +1,10 @@
 <x-layout>
-    <div class="mx-32 py-6 text-5xl uppercase font-extrabold text-center">
+    <div class="mx-32 py-16 text-5xl font-extrabold text-center font-mono">
         {{ $posts['Headline']->content }}
     </div>
-    <div class="flex md:mx-32 mx-8 py-6">
-        <div class="md:w-2/3 w-full p-2 mx-auto">
+    <div class="lg:flex justify-items-center 2xl:mx-80 md:mx-32 mx-8 py-6">
+        <livewire:slideshow :pictures="$posts['Homepage-About']->pictures" heightAndWidth=80 />
+        <div class="p-16 text-center mx-8">
             {!! $posts['Homepage-About']->content !!}
         </div>
     </div>

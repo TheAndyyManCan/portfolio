@@ -2,16 +2,18 @@
 
 namespace App\Livewire;
 
+use App\Models\FileUpload;
 use Livewire\Attributes\Validate;
 use Livewire\Component;
+use Livewire\WithFileUploads;
 
 class EditPost extends Component
 {
+    use WithFileUploads;
 
     #[Validate('required')]
     public $title;
 
-    #[Validate('required')]
     public $icon_url;
 
     #[Validate('required|integer')]
@@ -19,6 +21,9 @@ class EditPost extends Component
 
     #[Validate('required')]
     public $description;
+
+    #[Validate('image|max:3072')]
+    public $photo;
 
     public $skill;
 
@@ -32,15 +37,21 @@ class EditPost extends Component
 
     public function edit(){
         $this->validate();
+        $newPhoto = $this->photo->store();
         $attributes = [
             'title' => $this->title,
             'icon_url' => $this->icon_url,
             'years_of_experience' => $this->years_of_experience,
-            'description' => $this->description
+            'description' => $this->description,
+            'thumbnail' => $newPhoto
         ];
-
         $this->skill->update($attributes);
 
+        return redirect('admin/skills');
+    }
+
+    public function delete(){
+        $this->skill->delete();
         return redirect('admin/skills');
     }
 

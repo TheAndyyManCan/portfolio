@@ -4,9 +4,11 @@ namespace App\Livewire;
 
 use Livewire\Attributes\Validate;
 use Livewire\Component;
+use Livewire\WithFileUploads;
 
 class EducationEdit extends Component
 {
+    use WithFileUploads;
 
     public $education;
 
@@ -31,6 +33,9 @@ class EducationEdit extends Component
     #[Validate('required')]
     public $institution = '';
 
+    #[Validate('image|max:3072')]
+    public $photo;
+
     public function mount($education){
         $this->education = $education;
         $this->title = $this->education->title;
@@ -44,6 +49,7 @@ class EducationEdit extends Component
 
     public function edit(){
         $this->validate();
+        $newPhoto = $this->photo->store();
         $attributes = [
             'title' => $this->title,
             'icon_url' => $this->icon_url,
@@ -51,11 +57,17 @@ class EducationEdit extends Component
             'end_year' => $this->end_year,
             'description' => $this->description,
             'qualification' => $this->qualification,
-            'institution' => $this->institution
+            'institution' => $this->institution,
+            'thumbnail' => $newPhoto
         ];
 
         $this->education->update($attributes);
 
+        return redirect('admin/education');
+    }
+
+    public function delete(){
+        $this->education->delete();
         return redirect('admin/education');
     }
 

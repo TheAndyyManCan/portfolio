@@ -5,7 +5,6 @@
     <nav class="flex p-8 my-auto lg:right-0 lg:absolute mx-auto">
         <ul class="text-xs text-gray-200 flex">
             <x-nav-link link="/about">About</x-nav-link>
-            <x-nav-link link="/projects">Projects</x-nav-link>
             <x-nav-link link="/contact">Contact</x-nav-link>
             @auth
                 <x-nav-link link="/admin">Admin</x-nav-link>

@@ -4,9 +4,12 @@ namespace App\Livewire;
 
 use Livewire\Attributes\Validate;
 use Livewire\Component;
+use Livewire\WithFileUploads;
 
 class ProjectEdit extends Component
 {
+
+    use WithFileUploads;
 
     public $project;
 
@@ -28,6 +31,9 @@ class ProjectEdit extends Component
     #[Validate('required|bool')]
     public $featured = false;
 
+    #[Validate('image|max:3027')]
+    public $photo;
+
     public function mount($project){
         $this->project = $project;
         $this->title = $this->project->title;
@@ -40,18 +46,24 @@ class ProjectEdit extends Component
 
     public function edit(){
         $this->validate();
-
+        $newPhoto = $this->photo->store();
         $attributes = [
             'title' => $this->title,
             'icon_url' => $this->icon_url,
             'url' => $this->url,
             'short_description' => $this->short_description,
             'description' => $this->description,
-            'featured' => $this->featured
+            'featured' => $this->featured,
+            'thumbnail' => $newPhoto
         ];
 
         $this->project->update($attributes);
 
+        return redirect('admin/project');
+    }
+
+    public function delete(){
+        $this->project->delete();
         return redirect('admin/project');
     }
 

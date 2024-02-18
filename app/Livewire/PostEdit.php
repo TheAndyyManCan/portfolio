@@ -2,12 +2,17 @@
 
 namespace App\Livewire;
 
+use App\Models\FileUpload;
 use App\Models\Post;
+use Illuminate\Support\Facades\Storage;
 use Livewire\Attributes\Validate;
 use Livewire\Component;
+use Livewire\WithFileUploads;
 
 class PostEdit extends Component
 {
+
+    use WithFileUploads;
 
     public $post;
     public $categories;
@@ -27,6 +32,9 @@ class PostEdit extends Component
 
     #[Validate('int|nullable')]
     public $project_id = null;
+
+    #[Validate(['photos.*' => 'image|max:3072'])]
+    public $photos = [];
 
     public function mount($categories, $projects, $id){
         $this->categories = $categories;
@@ -49,7 +57,24 @@ class PostEdit extends Component
             'content' => $this->content
         ];
 
+        foreach($this->photos as $photo){
+            $newPhoto = $photo->store();
+            $fileAttributes = [
+                'category_id' => $this->category_id,
+                'project_id' => $this->project_id,
+                'post_id' => $this->post->id,
+                'skill_id' => null,
+                'url' => $newPhoto
+            ];
+            FileUpload::create($fileAttributes);
+        }
+
         $this->post->update($attributes);
+        return redirect('admin/post');
+    }
+
+    public function delete(){
+        $this->post->delete();
         return redirect('admin/post');
     }
 

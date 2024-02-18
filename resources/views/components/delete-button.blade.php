@@ -1,0 +1,1 @@
+<button wire:click="delete" wire:confirm="Are you sure you want to delete?" {{ $attributes(['class' => 'p-2 bg-red-700 rounded text-white uppercase font-semibold hover:bg-white hover:text-red-700']) }}>{{ $slot }}</button>

@@ -2,21 +2,39 @@
 
 namespace App\Livewire;
 
-use App\Models\Project;
 use Livewire\Component;
 
-class ProjectPanel extends Component
+class Slideshow extends Component
 {
 
-    public $showDescription = false;
-    public $item;
+    public $active = 0;
 
-    public function toggleDescription(){
-        $this->showDescription = !$this->showDescription;
+    public $activeClass = "block transition ease-in-out duration-300";
+    public $inactiveClass = "hidden transition ease-in-out duration-300";
+    public $heightAndWidthClass = "h-80 w-80";
+
+    public $pictures = [];
+
+    public function mount($pictures, $heightAndWidth){
+        $this->$pictures = $pictures;
+        $this->heightAndWidthClass = "h-" . $heightAndWidth . " w-" . $heightAndWidth . " ";
     }
 
-    public function mount($id){
-        $this->item = Project::find($id);
+    public function prev(){
+        if($this->active == 0){
+            $this->active = $this->pictures->count() - 1;
+        } else {
+            $this->active--;
+        }
+    }
+
+    public function next(){
+        if($this->active == $this->pictures->count() - 1){
+            $this->active = 0;
+        } else {
+            $this->active++;
+        }
+
     }
 
     public function placeholder(){
@@ -78,6 +96,6 @@ class ProjectPanel extends Component
 
     public function render()
     {
-        return view('livewire.project-panel');
+        return view('livewire.slideshow');
     }
 }
