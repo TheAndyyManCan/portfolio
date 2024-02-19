@@ -6,7 +6,7 @@
         <ul class="text-xs text-gray-200 flex">
             <x-nav-link link="/about">About</x-nav-link>
             <x-nav-link link="/contact">Contact</x-nav-link>
-            <x-nav-link link="https://github.com/TheAndyyManCan">GitHub</x-nav-link>
+            <li class="transition ease-in-out inline px-2 font-semibold uppercase hover:text-white hover:-translate-y-1 hover:scale-110 duration-300"><a href="https://github.com/TheAndyyManCan" target="_blank ">GitHub</a></li>
             @auth
                 <x-nav-link link="/admin">Admin</x-nav-link>
                 <form method="POST" action="/logout">
