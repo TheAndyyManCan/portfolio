@@ -13,13 +13,13 @@ class CategorySeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('categorys')->insert([
+        DB::table('categories')->insert([
             'title' => 'Homepage'
         ]);
-        DB::table('categorys')->insert([
+        DB::table('categories')->insert([
             'title' => 'about'
         ]);
-        DB::table('categorys')->insert([
+        DB::table('categories')->insert([
             'title' => 'projects'
         ]);
     }
