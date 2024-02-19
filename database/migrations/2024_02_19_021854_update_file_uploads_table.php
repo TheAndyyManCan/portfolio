@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::table('file_uploads', function(Blueprint $table){
             $table->foreignId('skill_id')->nullable();
-        })
+        });
     }
 
     /**
