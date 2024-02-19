@@ -13,8 +13,8 @@ use Illuminate\Support\Facades\DB;
 class HomeController extends Controller
 {
     public function index(){
+        ddd(DB::table('categories')->all());
         $category = DB::table('categories')->where('title', 'Homepage')->first();
-        ddd($category);
         $posts = Post::all()
                 ->where('category_id', $category->id)
                 ->keyBy('title');
