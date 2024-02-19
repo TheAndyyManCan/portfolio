@@ -31,5 +31,12 @@ class PostSeeder extends Seeder
 
 <p>I can't tell you how much I appreciate you taking the time to view my portfolio. Feel free to look around and find out more about me and my passion.</p>"
         ]);
+        DB::table('posts')->insert([
+            'title' => 'About',
+            'category_id' => 2,
+            'project_id' => null,
+            'description' => "description",
+            'content' => 'Intuitive Solutions to Complex Problems'
+        ]);
     }
 }
