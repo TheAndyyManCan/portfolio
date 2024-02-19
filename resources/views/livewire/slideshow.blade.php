@@ -14,7 +14,7 @@
             @endforeach
         </div>
     @else
-        <div class="w-80 h-80 mx-auto">
+        <div class="{{ $heightAndWidthClass }} mx-auto overflow-hidden">
             @foreach($pictures as $picture)
                 <img src="{{ url('images/' . $picture->url) }}" alt="image">
             @endforeach

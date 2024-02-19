@@ -8,7 +8,7 @@
         <div class="mx-32 py-6 text-4xl font-bold font-mono text-center">
             {{ $project->title }}
         </div>
-        <div class="mx-32">
+        <div class="mx-8 lg:w-2/3 lg:mx-auto">
             {!! $post->content !!}
         </div>
     @else

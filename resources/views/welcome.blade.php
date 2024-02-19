@@ -3,7 +3,9 @@
         {{ $posts['Headline']->content }}
     </div>
     <div class="lg:flex justify-items-center 2xl:mx-80 md:mx-32 mx-8 py-6">
-        <livewire:slideshow :pictures="$posts['Homepage-About']->pictures" heightAndWidth=80 />
+        <div class="">
+            <livewire:slideshow :pictures="$posts['Homepage-About']->pictures" heightAndWidth=96 />
+        </div>
         <div class="p-16 text-center mx-8">
             {!! $posts['Homepage-About']->content !!}
         </div>

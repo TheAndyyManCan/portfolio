@@ -22,7 +22,7 @@ class EditPost extends Component
     #[Validate('required')]
     public $description;
 
-    #[Validate('image|max:3072')]
+    #[Validate('image')]
     public $photo;
 
     public $skill;

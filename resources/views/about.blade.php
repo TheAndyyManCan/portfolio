@@ -4,7 +4,7 @@
     </div>
     <div class="lg:flex 2xl:mx-64 lg:mx-32 mx-8">
         <div class="lg:order-last">
-            <livewire:slideshow :pictures="$posts['About']->pictures" heightAndWidth=100 />
+            <livewire:slideshow :pictures="$posts['About']->pictures" heightAndWidth=96 />
         </div>
         <div class="lg:flex-0 md:w-2/3 w-full p-2 mx-auto">
             {!! $posts['About']->content !!}
