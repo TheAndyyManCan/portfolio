@@ -14,6 +14,7 @@ class HomeController extends Controller
 {
     public function index(){
         $category = DB::table('categories')->where('title', 'Homepage')->first();
+        ddd($category);
         $posts = Post::all()
                 ->where('category_id', $category->id)
                 ->keyBy('title');
