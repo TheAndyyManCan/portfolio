@@ -14,7 +14,7 @@ class CategorySeeder extends Seeder
     public function run(): void
     {
         DB::table('categorys')->insert([
-            'title' => 'homepage'
+            'title' => 'Homepage'
         ]);
         DB::table('categorys')->insert([
             'title' => 'about'
