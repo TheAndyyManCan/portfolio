@@ -6,6 +6,7 @@
         <ul class="text-xs text-gray-200 flex">
             <x-nav-link link="/about">About</x-nav-link>
             <x-nav-link link="/contact">Contact</x-nav-link>
+            <x-nav-link link="https://github.com/TheAndyyManCan">GitHub</x-nav-link>
             @auth
                 <x-nav-link link="/admin">Admin</x-nav-link>
                 <form method="POST" action="/logout">
