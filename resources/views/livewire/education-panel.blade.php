@@ -1,5 +1,5 @@
 <div class="justify-self-center">
-    <img wire:click="toggleDescription()" src="{{ url('images/' . $item->thumbnail) }}" alt="{{ $item->title }}" class="transition ease-in-out hover:scale-105 duration-300 hover:cursor-pointer md:h-48 md:w-48 h-32 w-32 mx-auto"/>
+    <img wire:click="toggleDescription()" src="{{ asset('images/' . $item->thumbnail) }}" alt="{{ $item->title }}" class="transition ease-in-out hover:scale-105 duration-300 hover:cursor-pointer md:h-48 md:w-48 h-32 w-32 mx-auto"/>
     <div class="text-sm uppercase text-center p-2 font-semibold">{{ $item->institution }}</div>
     <div class="text-sm uppercase text-center p-2">{{ $item->title }}</div>
     <div class="text-sm uppercase text-center p-2">{{ $item->start_year }} - {{ $item->end_year }}</div>

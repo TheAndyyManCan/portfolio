@@ -4,7 +4,7 @@
             <button wire:click="prev" class="absolute left-0 top-1/2 rounded-full bg-black py-2 px-4 text-white hover:bg-white hover:text-black"><</button>
             <button wire:click="next" class="absolute right-0 top-1/2 rounded-full bg-black py-2 px-4 text-white hover:bg-white hover:text-black">></button>
             @foreach($pictures as $key => $picture)
-                <img src=" {{url('images/' . $picture->url )}}" alt="image"
+                <img src=" {{asset('images/' . $picture->url )}}" alt="image"
                 @if($active == $key)
                     class="{{ $activeClass }}"
                 @else
