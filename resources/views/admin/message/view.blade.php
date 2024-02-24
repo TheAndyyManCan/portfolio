@@ -1,6 +1,6 @@
 <x-layout>
     <x-admin header="View Message">
-        <div class="bg-gray-200 p-6 rounded-xl">
+        <div class="bg-dark-200 p-6 rounded-xl text-dark-600">
             <label for="sender" class="text-xs uppercase font-semibold">Sender</label>
             <div name="sender">{{ $message->sender_name }}</div><br />
             <label for="email" class="text-xs uppercase font-semibold">Email</label>

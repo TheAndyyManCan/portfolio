@@ -1,7 +1,7 @@
 <x-layout>
     <x-admin header="Messages">
         <table class="w-full text-center border">
-            <tr class="uppercase border bg-gray-200">
+            <tr class="uppercase border bg-dark-300 text-white">
                 <th>Sender</th>
                 <th>Subject</th>
                 <th>View</th>
@@ -10,7 +10,7 @@
                 <tr class ="border
                     @php
                         echo ($message->read) ? ' ' : 'font-semibold ';
-                        echo ($message->id % 2 == 0) ? 'bg-gray-200' : 'bg-white';
+                        echo ($message->id % 2 == 0) ? 'bg-dark-100' : 'bg-dark-200';
                     @endphp
                 ">
                     <td>{{ $message->sender_name }}</td>
