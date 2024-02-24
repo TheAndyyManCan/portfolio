@@ -6,7 +6,7 @@
         <div class="lg:order-last">
             <livewire:slideshow :pictures="$posts['About']->pictures" heightAndWidth=96 />
         </div>
-        <div class="lg:flex-0 md:w-2/3 w-full p-6 mx-auto bg-dark-200 rounded-xl">
+        <div class="lg:flex-0 md:w-2/3 w-full p-6 mx-auto bg-dark-200 rounded-xl lg:my-0 my-4">
             {!! $posts['About']->content !!}
         </div>
     </div>
