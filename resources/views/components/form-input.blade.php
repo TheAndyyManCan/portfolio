@@ -4,13 +4,13 @@
     @if($type != 'textarea')
         <input  type="{{ $type }}"
                 name="{{ $name }}"
-                class="w-full p-2 h-8 rounded border focus:ring focus:outline-none font-semibold text-sm"
+                class="w-full p-2 h-8 rounded focus:ring focus:outline-none font-semibold text-sm bg-dark-200 text-dark-600"
                 value="{{ $value }}"
                 wire:model="{{ $name }}"/>
         {{-- <x-form-error :name="$name" /> --}}
     @else
         <textarea name="{{ $name }}"
-                  class="w-full p-2 rounded border focus:ring focus:outline-none font-semibold text-sm"
+                  class="w-full p-2 rounded focus:ring focus:outline-none font-semibold text-sm bg-dark-200 text-dark-600"
                   wire:model="{{ $name }}">{{ $value }}</textarea>
     @endif
 </div>

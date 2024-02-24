@@ -4,7 +4,7 @@
         Maybe they were offering me a job!<br /><br />
         Better get in there quick!<br /><br />
     </div>
-    <div class="bg-gray-200 rounded-xl lg:w-1/2 w-full lg:mx-32">
+    <div class="bg-dark-300 text-dark-600 rounded-xl lg:w-1/2 w-full lg:mx-32">
         @if(!$messageSent)
             <form wire:submit="store" class="p-8">
                 <x-form-input name="name" />
