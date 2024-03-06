@@ -14,7 +14,6 @@
         <main class="h-screen flex-grow bg-dark-100 text-white">
             {{ $slot }}
         </main>
-        <x-footer />
     </div>
 </body>
 </html>
