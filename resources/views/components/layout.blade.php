@@ -9,9 +9,9 @@
     @vite('resources/css/app.css')
 </head>
 <body class="font-figtree selection:bg-dark-600">
-    <div class="flex flex-col overflow-hidden">
+    <div class="flex flex-col">
         <x-header />
-        <main class="h-screen flex-grow bg-dark-100 text-white overflow-auto">
+        <main class="h-screen flex-grow bg-dark-100 text-white">
             {{ $slot }}
         </main>
         <x-footer />
