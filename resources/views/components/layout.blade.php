@@ -8,13 +8,13 @@
     <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
     @vite('resources/css/app.css')
 </head>
-<body class="font-figtree selection:bg-dark-600">
+<body class="font-figtree bg-dark-100 selection:bg-dark-600">
     <div class="flex flex-col">
         <x-header />
         <main class="h-full flex-grow bg-dark-100 text-white">
             {{ $slot }}
         </main>
-        {{-- <x-footer /> --}}
+        <x-footer />
     </div>
 </body>
 </html>
