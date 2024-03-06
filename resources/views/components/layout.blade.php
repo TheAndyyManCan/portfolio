@@ -11,10 +11,10 @@
 <body class="font-figtree bg-dark-100 selection:bg-dark-600">
     <div class="flex flex-col">
         <x-header />
-        <main class="h-screen flex-grow bg-dark-100 text-white mb-auto">
+        <main class="h-screen flex-grow bg-dark-100 text-white">
             {{ $slot }}
         </main>
-        <x-footer />
+        {{-- <x-footer /> --}}
     </div>
 </body>
 </html>
