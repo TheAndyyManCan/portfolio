@@ -11,7 +11,7 @@
 <body class="font-figtree selection:bg-dark-600">
     <div class="flex flex-col">
         <x-header />
-        <main class="h-screen flex-grow bg-dark-100 text-white">
+        <main class="h-full flex-grow bg-dark-100 text-white">
             {{ $slot }}
         </main>
         {{-- <x-footer /> --}}
